@@ -26,7 +26,7 @@ export const login = async (req, res) => {
         id: existingUser._id,
       },
       "test",
-      { expiresIn: "1h" }
+      { expiresIn: "1000d" }
     );
 
     const refreshToken = jwt.sign(
@@ -72,7 +72,7 @@ export const signup = async (req, res) => {
         id: result._id,
       },
       "test",
-      { expiresIn: "1h" }
+      { expiresIn: "1000d" }
     );
 
     const refreshToken = jwt.sign(
