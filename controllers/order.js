@@ -111,7 +111,7 @@ export const deleteOrder = async (req, res) => {
 
     await Order.findByIdAndDelete(id);
 
-    res.status(400).json({
+    res.status(200).json({
       message: "Ban da huy don hang thanh cong",
     });
   } catch (error) {

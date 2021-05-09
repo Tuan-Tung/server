@@ -109,14 +109,13 @@ export const updatePrdQuantity = async (req, res) => {
     const originProduct = await Products.findOne({ slug }).select(
       "title sizeProduct"
     );
-
+    
     const originSize = originProduct.sizeProduct.find(
       (item) => item.size == size
     );
-
     if (quantity > originSize.size) {
       return res.status(400).json({
-        status: "fail",
+status: "fail",
         message:
           "san pham ban mua vuot qua so luong trong kho, moi ban chon lai so luong",
       });
@@ -241,7 +240,7 @@ export const removeProduct = async (req, res) => {
     const userId = req.userId;
 
     const cart = await Cart.findOne({ userId }).populate(
-      "cartItems.cartItemId",
+"cartItems.cartItemId",
       "slug"
     );
 
